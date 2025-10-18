@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eis — Made in Texas · Hico, TX</title>
-  <meta name="description" content="Eis — Sandwiches & Ice Cream. Bright, nostalgic, small-town Texas vibes. Made in Texas · Hico, TX." />
+  <meta name="description" content="Eis — Sandwiches & Ice Cream. Bright, nostalgic, small-town Texas vibes. Open daily 11am–8pm. 107 Pecan St, Hico, TX." />
   <link rel="icon" href="/assets/favicon.png" />
 
   <style>
@@ -72,7 +72,7 @@
 
   <!-- HEADER -->
   <header>
-    <div class="nav">
+    <div class="nav" role="navigation" aria-label="Main">
       <div class="brand">
         <img src="/assets/logo.png" alt="Eis logo">
         <div>Eis — <span style="color:var(--red);font-weight:900">Made in Texas</span></div>
@@ -90,84 +90,84 @@
   <section class="hero">
     <div class="hero-card">
       <h1>Sandwiches & Ice Cream — <span style="color:var(--red)">bright, nostalgic,</span> and 100% Texas.</h1>
-      <p class="lead">The small-town hangout you remember. Bigger smiles, better sammies, and scoops that taste like summer — right here in Hico.</p>
+      <p class="lead">Smoked-in-house meats, melty grilled sandwiches, big garden salads, and scoops that taste like summer — right here in Hico.</p>
       <div class="cta">
         <a href="#menu" class="btn btn-red">See the Menu</a>
-        <a href="#visit" class="btn btn-ghost">Directions to Hico</a>
+        <a href="#visit" class="btn btn-ghost" aria-label="Get directions to Eis in Hico, Texas">Directions to Hico</a>
       </div>
     </div>
-    <div class="hero-badge">
+    <div class="hero-badge" aria-hidden="true">
       <img src="/assets/logo.png" alt="Eis — Made in Texas · Hico, TX">
     </div>
   </section>
 
-  <!-- PHOTO MOSAIC (using your filenames) -->
+  <!-- PHOTO MOSAIC (captions aligned to your menu) -->
   <section class="mosaic">
     <div class="wrap">
       <h2>Scenes from Eis</h2>
       <div class="grid">
-        <a class="tile" data-caption="Classic Club vibes"><img src="/assets/DSC02166.jpg" alt="Sandwich stack with chips and pickles"></a>
-        <a class="tile" data-caption="Scoop day"><img src="/assets/IMG_3406.jpg" alt="Strawberry ice cream scoops"></a>
-        <a class="tile" data-caption="Neon sprinkles at night"><img src="/assets/IMG_4694.jpg" alt="Pink scoop with sprinkles"></a>
-        <a class="tile" data-caption="Turkey melt close-up"><img src="/assets/IMG_0380.jpg" alt="Turkey sandwich close-up"></a>
+        <a class="tile" data-caption="Smoked ham sandwich"><img src="/assets/DSC02166.jpg" alt="Smoked ham sandwich with chips"></a>
+        <a class="tile" data-caption="Strawberry scoops"><img src="/assets/IMG_3406.jpg" alt="Strawberry ice cream scoops"></a>
+        <a class="tile" data-caption="Sprinkles & smiles"><img src="/assets/IMG_4694.jpg" alt="Ice cream with sprinkles"></a>
+        <a class="tile" data-caption="Turkey sandwich"><img src="/assets/IMG_0380.jpg" alt="Turkey sandwich close-up"></a>
         <a class="tile" data-caption="Blue Monster"><img src="/assets/_DSC6816.jpg" alt="Blue ice cream texture"></a>
-        <a class="tile" data-caption="Garden salad goodness"><img src="/assets/DSC02764.JPG" alt="Garden salad bowl"></a>
+        <a class="tile" data-caption="Garden salad"><img src="/assets/DSC02764.JPG" alt="Garden salad bowl"></a>
 
-        <a class="tile" data-caption="Rainbow sherbet"><img src="/assets/DSC02840.JPG" alt="Rainbow sherbet tub"></a>
-        <a class="tile" data-caption="So many flavors"><img src="/assets/DSC02845.JPG" alt="Ice cream tubs"></a>
-        <a class="tile" data-caption="Jalapeño grilled cheese"><img src="/assets/grilled chz.jpeg" alt="Melty grilled cheese"></a>
-        <!-- Reuse a couple to round out the grid nicely -->
-        <a class="tile"><img src="/assets/IMG_3406.jpg" alt=""></a>
-        <a class="tile"><img src="/assets/IMG_0380.jpg" alt=""></a>
-        <a class="tile"><img src="/assets/DSC02166.jpg" alt=""></a>
+        <a class="tile" data-caption="Rainbow sherbet"><img src="/assets/DSC02840.JPG" alt="Rainbow sherbet"></a>
+        <a class="tile" data-caption="So many flavors"><img src="/assets/DSC02845.JPG" alt="Ice cream tubs in the case"></a>
+        <a class="tile" data-caption="Jalapeño grilled cheese"><img src="/assets/grilled%20chz.jpeg" alt="Jalapeño grilled cheese"></a>
+
+        <a class="tile"><img src="/assets/IMG_3406.jpg" alt="Ice cream scoop"></a>
+        <a class="tile"><img src="/assets/IMG_0380.jpg" alt="Turkey sandwich"></a>
+        <a class="tile"><img src="/assets/DSC02166.jpg" alt="Ham sandwich"></a>
       </div>
     </div>
   </section>
 
-  <!-- MENU PREVIEW (Featured items you requested) -->
+  <!-- MENU PREVIEW (Featured items you serve) -->
   <section id="menu" class="section">
     <div class="wrap">
-      <div class="card">
-        <h3>Our Favorites</h3>
+      <div class="card" aria-labelledby="featured-menu">
+        <h3 id="featured-menu">Our Favorites</h3>
         <div class="menu-cards">
           <div class="menu-item">
-            <img src="/assets/grilled chz.jpeg" alt="Jalapeño grilled cheese">
+            <img src="/assets/grilled%20chz.jpeg" alt="Jalapeño grilled cheese">
             <div class="meta">
               <strong>Jalapeño Grilled Cheese</strong>
-              <span>Buttery toast, melty cheese, a little kick 🌶️</span>
+              <span>Buttery toast, melty cheese, jalapeño kick.</span>
             </div>
           </div>
           <div class="menu-item">
-            <img src="/assets/IMG_0380.jpg" alt="Turkey melt">
+            <img src="/assets/IMG_0380.jpg" alt="Turkey Melt">
             <div class="meta">
               <strong>Turkey Melt</strong>
-              <span>Roasted turkey, Swiss, pickle-mustard, toasted</span>
+              <span>Turkey + double cheddar, garlic pepper mayo — melted.</span>
             </div>
           </div>
           <div class="menu-item">
-            <img src="/assets/DSC02764.JPG" alt="Garden salad">
+            <img src="/assets/DSC02764.JPG" alt="Garden Salad">
             <div class="meta">
               <strong>Garden Salad</strong>
-              <span>Crisp greens, peppers, cucumbers, house dressing</span>
+              <span>Romaine & green leaf, peppers, tomatoes, cukes, green beans, mozzarella.</span>
             </div>
           </div>
           <div class="menu-item">
             <img src="/assets/IMG_3406.jpg" alt="Scoop of ice cream">
             <div class="meta">
               <strong>Scoop of Ice Cream</strong>
-              <span>Small-batch flavors, made in Texas</span>
+              <span>Kids, single, or double. Shakes & malts too.</span>
             </div>
           </div>
         </div>
         <div style="margin-top:14px">
-          <a class="btn btn-ghost" href="/menu.html">View Full Menu</a>
+          <a class="btn btn-ghost" href="/menu.html" aria-label="View full menu">View Full Menu</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- MUSIC STRIP -->
-  <section id="music" class="music">
+  <section id="music" class="music" aria-label="Live music">
     <div class="wrap">
       <h4>Live Music Fridays — No Cover</h4>
       <div class="pill">$2 Beers · $4 House Chiltons</div>
@@ -188,7 +188,7 @@
         </div>
       </div>
 
-      <div id="visit" class="map">
+      <div id="visit" class="map" aria-label="Map location for Eis">
         <iframe
           title="Eis — 107 Pecan St, Hico, TX 76457"
           src="https://maps.google.com/maps?q=107%20Pecan%20St%2C%20Hico%2C%20TX%2076457&t=&z=16&ie=UTF8&iwloc=&output=embed"
