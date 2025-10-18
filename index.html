@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eis — Sandwiches & Ice Cream</title>
+  <meta name="description" content="Eis — cozy sandwiches & ice cream. Reopening soon." />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#fff9f2; --ink:#222; --accent:#a85d2a; --muted:#6b6b6b;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Arial; margin:0; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px;}
+    header{display:flex; align-items:center; justify-content:space-between; gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;background:#eee;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.05)}
+    h1{font-size:28px;margin:0 0 10px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .menu-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .menu-item{padding:12px;border-radius:8px;background:linear-gradient(#fff,#fff);border:1px solid rgba(0,0,0,0.03)}
+    footer{margin-top:36px;color:var(--muted);font-size:14px;text-align:center;padding-bottom:40px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:white;text-decoration:none;font-weight:700}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; }
+      .menu-list{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">EIS</div>
+        <div>
+          <strong>Eis</strong><br/><small style="color:var(--muted)">Sandwiches · Ice Cream · Good Vibes</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#hours">Hours</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>We’re reopening soon — welcome back to Eis</h1>
+          <p class="lead">Retro snacks, made-from-scratch sandwiches, and locally scooped ice cream. Follow us for reopening updates and soft opening dates.</p>
+          <p>
+            <a class="btn" href="#contact">Get updates</a>
+            <a style="margin-left:10px;color:var(--muted);text-decoration:none" href="#menu">View menu</a>
+          </p>
+        </div>
+
+        <div id="menu" style="margin-top:18px">
+          <div class="card">
+            <h3 style="margin-top:0">Featured</h3>
+            <div class="menu-list">
+              <div class="menu-item"><strong>Smoked Brisket Melt</strong><div style="color:var(--muted)">Smoked brisket, cheddar, pickles</div></div>
+              <div class="menu-item"><strong>Classic Club</strong><div style="color:var(--muted)">Turkey, bacon, tomato, aioli</div></div>
+              <div class="menu-item"><strong>Vanilla Bean Scoop</strong><div style="color:var(--muted)">Local dairy, small-batch</div></div>
+              <div class="menu-item"><strong>Rotating Special</strong><div style="color:var(--muted)">See socials for todays special</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4 id="hours" style="margin:0 0 8px">Hours</h4>
+          <p style="margin:0;color:var(--muted)">Mon–Fri: 10am–6pm<br/>Sat: 9am–7pm · Sun: Closed</p>
+          <hr style="margin:14px 0;border:none;border-top:1px solid #eee"/>
+          <h4 style="margin:0 0 8px">Location</h4>
+          <p style="margin:0;color:var(--muted)">123 Main St · Hico, TX</p>
+          <hr style="margin:14px 0;border:none;border-top:1px solid #eee"/>
+          <a class="btn" href="#contact">Book a catering</a>
+        </div>
+      </aside>
+    </section>
+
+    <footer id="contact">
+      <div class="card" style="display:inline-block;padding:18px;margin-top:18px">
+        <strong>Contact</strong><br/>
+        <small style="color:var(--muted)">Email: hello@eis.example • Phone: (###) ###-####</small>
+      </div>
+
+      <div style="margin-top:18px">© <span id="yr"></span> Eis — All rights reserved</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
