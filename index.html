@@ -6,208 +6,185 @@
   <title>Eis — Made in Texas · Hico, TX</title>
   <meta name="description" content="Eis — Sandwiches & Ice Cream. Bright, nostalgic, small-town Texas vibes. Open daily 11am–8pm. 107 Pecan St, Hico, TX." />
   <link rel="icon" href="/assets/favicon.png" />
-
   <style>
     :root{
-      --cream:#FBE7A1; --navy:#243E90; --red:#E03224; --ink:#1c2230; --bg:#FFFDF5;
-      --line:rgba(36,62,144,.18); --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.08); --maxw:1100px;
+      --cream:#FBE7A1; --navy:#243E90; --red:#E0372B; --blue:#1D62FF; --yellow:#FFD75A; --ink:#1b1b1b;
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0}
-    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial;
-      color:var(--ink); background:linear-gradient(#fffdf9,var(--cream)); line-height:1.6; -webkit-font-smoothing:antialiased;}
-    a{color:inherit} .wrap{max-width:var(--maxw); margin:0 auto; padding:20px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;
+      color:var(--ink); background:#fff;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92vw); margin:0 auto}
 
-    header{position:sticky; top:0; z-index:30; background:rgba(255,253,245,.85); backdrop-filter:blur(6px);
-      border-bottom:1px solid var(--line)}
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:18px; padding:12px 20px; max-width:var(--maxw); margin:0 auto}
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; color:var(--navy)}
-    .brand img{width:44px;height:44px;display:block;border-radius:10px}
-    .links a{ text-decoration:none; color:var(--navy); font-weight:700; margin-left:18px; padding:6px 10px; border-radius:10px }
-    .links a:hover{ background:rgba(36,62,144,.08) }
+    /* Header */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #ececec; z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.red{background:var(--red)} .dot.blue{background:var(--blue)} .dot.yellow{background:var(--yellow)}
+    .menu a{margin-left:16px;font-weight:600}
+    .btn{display:inline-block;background:var(--navy);color:#fff;padding:12px 18px;border-radius:10px}
+    .btn:hover{opacity:.9}
 
-    .hero{display:grid; grid-template-columns:1.2fr 1fr; gap:24px; align-items:center; padding:28px 20px 12px; max-width:var(--maxw); margin:0 auto}
-    .hero-card{background:#fff; border:1px solid var(--line); border-radius:calc(var(--radius) + 6px); box-shadow:var(--shadow); padding:26px}
-    .hero h1{font-size:clamp(28px,3.6vw,44px); color:var(--navy); line-height:1.15; margin:0 0 10px; letter-spacing:.2px}
-    .lead{ color:#4a4f5c; font-size:clamp(15px,1.5vw,18px); margin:0 0 18px }
-    .cta{ display:flex; gap:12px; flex-wrap:wrap }
-    .btn{display:inline-block; text-decoration:none; border:2px solid transparent; padding:11px 16px; border-radius:14px; font-weight:900; letter-spacing:.25px}
-    .btn-red{ background:var(--red); color:#fff } .btn-red:hover{ filter:brightness(.98) }
-    .btn-ghost{ border-color:var(--navy); color:var(--navy); background:#fff } .btn-ghost:hover{ background:rgba(36,62,144,.07) }
+    /* Hero */
+    .hero{padding:56px 0 28px; background:linear-gradient(#ffffff, #fffaf0)}
+    .hero-wrap{display:grid;grid-template-columns: 1.1fr .9fr;gap:24px;align-items:center}
+    .hero h1{font-size:clamp(32px,4vw,48px); line-height:1.05; margin:0 0 10px}
+    .hero p{margin:0 0 22px; font-size:clamp(16px,1.8vw,18px)}
+    .hero-img{border-radius:16px; overflow:hidden; box-shadow:0 12px 28px rgba(0,0,0,.12)}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--navy);margin-bottom:10px}
+    .badge .dot{width:8px;height:8px}
 
-    .hero-badge{ background:var(--cream); border:4px solid var(--navy); border-radius:26px; box-shadow:var(--shadow);
-      display:flex; align-items:center; justify-content:center; padding:24px; aspect-ratio:1/1 }
-    .hero-badge img{ width:92%; height:auto; display:block }
+    /* Collage */
+    .collage{padding:28px 0 10px}
+    .grid{
+      columns: 3 260px; column-gap:18px;
+    }
+    .grid figure{
+      break-inside: avoid; margin:0 0 18px; border-radius:14px; overflow:hidden;
+      box-shadow:0 6px 18px rgba(0,0,0,.08); background:#fff;
+    }
+    .grid img{display:block;width:100%;height:auto}
+    .grid figcaption{padding:10px 12px; font-size:.9rem; color:#444; background:#fff}
 
-    .mosaic{ padding:28px 20px } .mosaic h2{ color:var(--navy); margin:0 0 10px; font-size:26px }
-    .grid{ display:grid; gap:10px; grid-template-columns:repeat(6,1fr) }
-    .tile{ position:relative; border-radius:16px; overflow:hidden; background:#ddd; border:1px solid var(--line) }
-    .tile img{ width:100%; height:100%; object-fit:cover; display:block }
-    .tile::after{ content:attr(data-caption); position:absolute; left:0; right:0; bottom:0; padding:10px 12px; color:#fff; font-weight:800;
-      background:linear-gradient(transparent,rgba(0,0,0,.55)); opacity:0; transition:.25s ease }
-    .tile:hover::after{ opacity:1 }
+    /* Featured */
+    .featured{padding:38px 0 14px}
+    .featured h2{font-size:clamp(26px,3vw,34px); margin:0 0 12px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+    .card{border:1px solid #eee;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.06)}
+    .card img{width:100%;height:auto;display:block}
+    .card .info{padding:14px}
+    .tag{display:inline-block;background:var(--cream);border:1px solid #eedb8a;color:#563f00;font-size:.8rem;padding:4px 8px;border-radius:999px;margin-bottom:8px}
+    .card h3{margin:6px 0 4px;font-size:1.1rem}
+    .card p{margin:0;color:#555;font-size:.95rem}
 
-    .section{ padding:24px 20px } .card{ background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); padding:20px }
-    .section h3{ margin:0 0 8px; color:var(--navy) }
-    .menu-cards{ display:grid; gap:12px; grid-template-columns:repeat(4,1fr) }
-    .menu-item{ border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#fff }
-    .menu-item img{ width:100%; height:180px; object-fit:cover; display:block }
-    .menu-item .meta{ padding:12px } .meta strong{ color:var(--navy) } .meta span{ display:block; color:#5b5f6b; font-size:14px }
+    /* Footer */
+    footer{margin:34px 0 60px;color:#444}
+    .hours{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+    .pill{background:#f5f5f5;border-radius:999px;padding:8px 12px;border:1px solid #ececec}
 
-    .music{ background:var(--navy); color:#fff; padding:24px 0; margin:10px 0 0; border-top:6px solid var(--red); border-bottom:6px solid var(--red) }
-    .music .wrap{ display:flex; align-items:center; justify-content:space-between; gap:18px }
-    .music h4{ margin:0; font-size:22px; letter-spacing:.3px } .music .pill{ padding:8px 12px; background:#fff; color:var(--navy); border-radius:999px; font-weight:900 }
-
-    .cols{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
-    .hours .big{ font-weight:900; color:var(--navy); font-size:20px; letter-spacing:.3px; background:rgba(224,50,36,.08);
-      padding:10px 12px; border-radius:12px; display:inline-block }
-    .addr{ margin-top:10px; color:#4a4f5c } .map{ border-radius:16px; overflow:hidden; border:1px solid var(--line); min-height:300px }
-
-    footer{ padding:28px 20px 40px; text-align:center; color:#5b5f6b } footer img{ width:54px; height:54px; border-radius:12px; display:block; margin:0 auto 8px }
-
-    @media (max-width:980px){ .hero{ grid-template-columns:1fr } .grid{ grid-template-columns:repeat(3,1fr) } .menu-cards{ grid-template-columns:1fr 1fr } .cols{ grid-template-columns:1fr } }
-    @media (max-width:560px){ .grid{ grid-template-columns:repeat(2,1fr) } .nav .links{ display:none } }
+    /* Responsive tweaks */
+    @media (max-width:880px){ .hero-wrap{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="nav" role="navigation" aria-label="Main">
-      <div class="brand">
-        <img src="/assets/logo.png" alt="Eis logo">
-        <div>Eis — <span style="color:var(--red);font-weight:900">Made in Texas</span></div>
-      </div>
-      <div class="links">
-        <a href="#menu">Menu</a>
-        <a href="#music">Live Music</a>
-        <a href="#hours">Hours</a>
-        <a href="#visit" class="btn btn-ghost">Visit Us</a>
-      </div>
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="dot red"></div><div class="dot blue"></div><div class="dot yellow"></div>
+      <strong>Eis — Made in Texas</strong>
     </div>
-  </header>
+    <nav class="menu">
+      <a href="/">Home</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
 
+<main>
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-card">
-      <h1>Sandwiches & Ice Cream — <span style="color:var(--red)">bright, nostalgic,</span> and 100% Texas.</h1>
-      <p class="lead">Smoked-in-house meats, melty grilled sandwiches, big garden salads, and scoops that taste like summer — right here in Hico.</p>
-      <div class="cta">
-        <a href="#menu" class="btn btn-red">See the Menu</a>
-        <a href="#visit" class="btn btn-ghost" aria-label="Get directions to Eis in Hico, Texas">Directions to Hico</a>
+    <div class="container hero-wrap">
+      <div>
+        <div class="badge"><span class="dot red"></span><span class="dot blue"></span><span class="dot yellow"></span> Hico, Texas</div>
+        <h1>Sandwiches & Ice Cream. <br>Bright, nostalgic, small-town vibes.</h1>
+        <p>House-smoked meats, toasted bread, dill pickles, real Texas hospitality. Open daily 11am–8pm · 107 Pecan St.</p>
+        <a class="btn" href="/menu.html" aria-label="Open the full Eis menu">See Menu</a>
       </div>
-    </div>
-    <div class="hero-badge" aria-hidden="true">
-      <img src="/assets/logo.png" alt="Eis — Made in Texas · Hico, TX">
-    </div>
-  </section>
-
-  <!-- PHOTO MOSAIC (captions aligned to your menu) -->
-  <section class="mosaic">
-    <div class="wrap">
-      <h2>Scenes from Eis</h2>
-      <div class="grid">
-        <a class="tile" data-caption="Smoked ham sandwich"><img src="/assets/DSC02166.jpg" alt="Smoked ham sandwich with chips"></a>
-        <a class="tile" data-caption="Strawberry scoops"><img src="/assets/IMG_3406.jpg" alt="Strawberry ice cream scoops"></a>
-        <a class="tile" data-caption="Sprinkles & smiles"><img src="/assets/IMG_4694.jpg" alt="Ice cream with sprinkles"></a>
-        <a class="tile" data-caption="Turkey sandwich"><img src="/assets/IMG_0380.jpg" alt="Turkey sandwich close-up"></a>
-        <a class="tile" data-caption="Blue Monster"><img src="/assets/_DSC6816.jpg" alt="Blue ice cream texture"></a>
-        <a class="tile" data-caption="Garden salad"><img src="/assets/DSC02764.JPG" alt="Garden salad bowl"></a>
-
-        <a class="tile" data-caption="Rainbow sherbet"><img src="/assets/DSC02840.JPG" alt="Rainbow sherbet"></a>
-        <a class="tile" data-caption="So many flavors"><img src="/assets/DSC02845.JPG" alt="Ice cream tubs in the case"></a>
-        <a class="tile" data-caption="Jalapeño grilled cheese"><img src="/assets/grilled%20chz.jpeg" alt="Jalapeño grilled cheese"></a>
-
-        <a class="tile"><img src="/assets/IMG_3406.jpg" alt="Ice cream scoop"></a>
-        <a class="tile"><img src="/assets/IMG_0380.jpg" alt="Turkey sandwich"></a>
-        <a class="tile"><img src="/assets/DSC02166.jpg" alt="Ham sandwich"></a>
+      <div class="hero-img">
+        <img src="/assets/DSC00990.jpg" alt="Turkey Melt with potato salad and pickles" loading="eager" />
       </div>
     </div>
   </section>
 
-  <!-- MENU PREVIEW (Featured items you serve) -->
-  <section id="menu" class="section">
-    <div class="wrap">
-      <div class="card" aria-labelledby="featured-menu">
-        <h3 id="featured-menu">Our Favorites</h3>
-        <div class="menu-cards">
-          <div class="menu-item">
-            <img src="/assets/grilled%20chz.jpeg" alt="Jalapeño grilled cheese">
-            <div class="meta">
-              <strong>Jalapeño Grilled Cheese</strong>
-              <span>Buttery toast, melty cheese, jalapeño kick.</span>
-            </div>
-          </div>
-          <div class="menu-item">
-            <img src="/assets/IMG_0380.jpg" alt="Turkey Melt">
-            <div class="meta">
-              <strong>Turkey Melt</strong>
-              <span>Turkey + double cheddar, garlic pepper mayo — melted.</span>
-            </div>
-          </div>
-          <div class="menu-item">
-            <img src="/assets/DSC02764.JPG" alt="Garden Salad">
-            <div class="meta">
-              <strong>Garden Salad</strong>
-              <span>Romaine & green leaf, peppers, tomatoes, cukes, green beans, mozzarella.</span>
-            </div>
-          </div>
-          <div class="menu-item">
-            <img src="/assets/IMG_3406.jpg" alt="Scoop of ice cream">
-            <div class="meta">
-              <strong>Scoop of Ice Cream</strong>
-              <span>Kids, single, or double. Shakes & malts too.</span>
-            </div>
-          </div>
+  <!-- PHOTO COLLAGE (no repeats with Featured) -->
+  <section class="collage container" aria-label="Eis photo collage">
+    <div class="grid">
+      <figure>
+        <img src="/assets/IMG_1262%20(1).jpg" alt="Turkey sandwich with chips and drink" loading="lazy" />
+        <figcaption>Turkey Sandwich · house chips</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/IMG_1765.jpg" alt="House dill pickles" loading="lazy" />
+        <figcaption>House Dill Pickles</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/IMG_1766.jpg" alt="Seasoned kettle chips" loading="lazy" />
+        <figcaption>Seasoned Kettle Chips</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/IMG_2112.jpg" alt="Stack of grilled chicken breasts" loading="lazy" />
+        <figcaption>Herb-Grilled Chicken</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/IMG_2072.jpg" alt="Smoked brisket" loading="lazy" />
+        <figcaption>Texas-Smoked Brisket</figcaption>
+      </figure>
+      <figure>
+        <img src="/assets/Screenshot%202023-08-01%20at%2011.22.45%20AM.jpg" alt="Pimento cheese sandwich plate" loading="lazy" />
+        <figcaption>Pimento on Toasted Bread</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FEATURED SANDWICHES (unique images from collage) -->
+  <section class="featured container">
+    <h2>Featured Sandwiches</h2>
+    <div class="cards">
+      <article class="card">
+        <img src="/assets/Screenshot%202023-08-01%20at%2011.20.59%20AM.jpg" alt="Roast Beef Melt with chips" loading="lazy" />
+        <div class="info">
+          <span class="tag">Melt</span>
+          <h3>Roast Beef Melt</h3>
+          <p>Warm roast beef, melty cheese, dill pickles, toasted bread.</p>
         </div>
-        <div style="margin-top:14px">
-          <a class="btn btn-ghost" href="/menu.html" aria-label="View full menu">View Full Menu</a>
+      </article>
+
+      <article class="card">
+        <img src="/assets/DSC00990.jpg" alt="Turkey Melt sandwich" loading="lazy" />
+        <div class="info">
+          <span class="tag">Melt</span>
+          <h3>Turkey Melt</h3>
+          <p>Thin-sliced turkey with cheese on golden toasted bread.</p>
         </div>
-      </div>
+      </article>
+
+      <article class="card">
+        <img src="/assets/Screenshot%202023-08-01%20at%2011.24.34%20AM.jpg" alt="Chicken salad sandwich with tomato" loading="lazy" />
+        <div class="info">
+          <span class="tag">Classic</span>
+          <h3>Chicken Salad</h3>
+          <p>Creamy house chicken salad, tomato, Swiss, toasted.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="/assets/Screenshot%202023-08-01%20at%2011.22.45%20AM.jpg" alt="Pimento cheese sandwich" loading="lazy" />
+        <div class="info">
+          <span class="tag">Classic</span>
+          <h3>Pimento Cheese</h3>
+          <p>House pimento, toasted bread, optional tomato add-on.</p>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- MUSIC STRIP -->
-  <section id="music" class="music" aria-label="Live music">
-    <div class="wrap">
-      <h4>Live Music Fridays — No Cover</h4>
-      <div class="pill">$2 Beers · $4 House Chiltons</div>
-    </div>
-  </section>
-
-  <!-- HOURS & MAP -->
-  <section id="hours" class="section">
-    <div class="wrap cols">
-      <div class="card">
-        <h3>Hours & Location</h3>
-        <div class="hours">
-          <span class="big">Open <strong>11am – 8pm</strong> · 7 days a week</span>
-          <div class="addr">📍 107 Pecan St, Hico, TX 76457</div>
-        </div>
-        <div style="margin-top:16px">
-          <a class="btn btn-red" href="#visit">Plan Your Visit</a>
-        </div>
+  <!-- Hours / Location -->
+  <section class="container">
+    <footer>
+      <div class="hours">
+        <span class="pill"><strong>Open:</strong> Daily 11am–8pm</span>
+        <span class="pill"><strong>Address:</strong> 107 Pecan St, Hico, TX</span>
+        <span class="pill"><strong>Call:</strong> (254) 000-0000</span>
       </div>
-
-      <div id="visit" class="map" aria-label="Map location for Eis">
-        <iframe
-          title="Eis — 107 Pecan St, Hico, TX 76457"
-          src="https://maps.google.com/maps?q=107%20Pecan%20St%2C%20Hico%2C%20TX%2076457&t=&z=16&ie=UTF8&iwloc=&output=embed"
-          frameborder="0" style="border:0;width:100%;height:100%" allowfullscreen=""
-        ></iframe>
-      </div>
-    </div>
+    </footer>
   </section>
+</main>
 
-  <!-- FOOTER -->
-  <footer>
-    <img src="/assets/logo.png" alt="Eis logo">
-    <div>© <span id="yr"></span> Eis — Made in Texas · Hico, TX</div>
-    <div style="margin-top:6px">
-      <a href="mailto:hello@eishico.com" style="text-decoration:none; font-weight:700; color:var(--navy)">hello@eishico.com</a>
-      · <a href="https://instagram.com/eis.shop" style="text-decoration:none; font-weight:700; color:var(--navy)">Instagram</a>
-    </div>
-  </footer>
-
-  <script>document.getElementById('yr').textContent = new Date().getFullYear()</script>
 </body>
 </html>
